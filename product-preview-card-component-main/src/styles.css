@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap");
+
+:root {
+	--Darkcyan: hsl(158, 36%, 37%);
+	--Cream: hsl(30, 38%, 92%);
+	--Verydarkblue: hsl(212, 21%, 14%);
+	--Darkgrayishblue: hsl(228, 12%, 48%);
+	--White: hsl(0, 0%, 100%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	line-height: 1.5rem;
+}
+
+body {
+	background-color: var(--Cream);
+}
+
+img {
+	width: 100%;
+	display: block;
+}
+
+.ff {
+	font-family: "Fraunces", serif;
+	font-family: "Montserrat", sans-serif;
+}
+
+.img__mobile {
+	display: block;
+}
+
+.img__desktop {
+	display: none;
+}
+
+.container {
+	padding: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+.product {
+	background-color: var(--White);
+	border-radius: 1rem;
+	overflow: hidden;
+}
+
+.product__info {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 2rem;
+}
+
+.product__info h3 {
+	color: var(--Darkgrayishblue);
+	font-family: "Montserrat", sans-serif;
+	text-transform: uppercase;
+	font-weight: 200;
+	letter-spacing: 5px;
+}
+
+.product__info h2 {
+	color: var(--Verydarkblue);
+	font-family: "Fraunces", serif;
+	font-size: 2rem;
+	line-height: 2.1rem;
+}
+
+.product__info p {
+	color: var(--Darkgrayishblue);
+	font-size: 1.1rem;
+	font-weight: 500;
+}
+
+.product__info__price {
+	display: flex;
+	padding: 1rem 0;
+	gap: 1rem;
+}
+
+.product__info__price span:nth-child(1) {
+	font-size: 3rem;
+	font-family: "Fraunces", serif;
+	color: var(--Darkcyan);
+}
+
+.product__info__price span:nth-child(2) {
+	color: var(--Darkgrayishblue);
+	text-decoration: line-through;
+}
+
+.btn {
+	border: none;
+	outline: none;
+	padding: 10px 0;
+	border-radius: 0.5rem;
+	color: #fff;
+	background-color: var(--Darkcyan);
+	cursor: pointer;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	font-weight: bold;
+	font-family: "Montserrat", sans-serif;
+	border: 2px solid transparent;
+	transition: border 0.5s, background-color 0.5s, color 0.5s, fill 0.5s;
+
+	fill: var(--White);
+}
+
+.btn:hover {
+	border: 2px solid var(--Darkcyan);
+	background-color: transparent;
+	color: var(--Darkcyan);
+	fill: var(--Darkcyan);
+}
+
+/* .btn svg {
+	animation: animationIconCar 2s infinite;
+}
+
+@keyframes animationIconCar {
+	0% {
+		transform: translateY(5px);
+	}
+
+	50% {
+		transform: translateY(0px);
+	}
+
+	100% {
+		transform: translateY(5px);
+	}
+} */
+
+.btn span {
+	transition: transform 0.5s;
+}
+
+.btn:hover span {
+	transform: translateX(10px);
+}
+
+@media (min-width: 700px) {
+	.img__mobile {
+		display: none;
+	}
+
+	.img__desktop {
+		display: block;
+	}
+
+	.product {
+		display: flex;
+		max-width: 700px;
+	}
+}

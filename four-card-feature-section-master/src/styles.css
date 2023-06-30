@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+:root {
+	--Red: hsl(0, 78%, 62%);
+	--Cyan: hsl(180, 62%, 55%);
+	--Orange: hsl(34, 97%, 64%);
+	--Blue: hsl(212, 86%, 64%);
+	--VeryDarkBlue: hsl(234, 12%, 34%);
+	--GrayishBlue: hsl(229, 6%, 66%);
+	--VeryLightGray: hsl(0, 0%, 98%);
+	/* ejemplo */
+	--primary-100: #26a69a;
+	--primary-200: #408d86;
+	--primary-300: #cdfaf6;
+	--accent-100: #80cbc4;
+	--accent-200: #43a49b;
+	--text-100: #263339;
+	--text-200: #728f9e;
+	--bg-100: #e0f2f1;
+	--bg-200: #d0ebea;
+	--bg-300: #ffffff;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+body {
+	background-color: var(--bg-100);
+	color: var(--text-100);
+
+	transition: background-color 0.5s, color 0.5s;
+}
+
+body.darkmode {
+	/* ejemplo */
+	--primary-100: #892cdc;
+	--primary-200: #bc6ff1;
+	--primary-300: #fdf6fd;
+	--accent-100: #d9acf5;
+	--accent-200: #fff4ff;
+	--text-100: #eeeeee;
+	--text-200: #fdebed;
+	--bg-100: #222831;
+	--bg-200: #393e46;
+	--bg-300: #454e59;
+}
+
+.container {
+	padding: 3rem 1rem;
+
+	display: grid;
+	place-items: center;
+	min-height: 100vh;
+}
+
+.technology {
+	max-width: 1024px;
+	display: grid;
+	gap: 2rem;
+}
+
+.technology__text {
+	display: grid;
+	gap: 1rem;
+	text-align: center;
+	max-width: 300px;
+	margin: 0 auto;
+}
+
+.technology__cards {
+	display: grid;
+	gap: 1rem;
+}
+
+.card {
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	border-radius: 0.5rem;
+	box-shadow: 0px 10px 10px #00000025;
+	position: relative;
+	overflow: hidden;
+	background-color: var(--bg-300);
+}
+
+.card::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	width: 100%;
+	height: 5px;
+}
+
+.card:nth-child(1)::before {
+	background-color: var(--Cyan);
+}
+
+.card:nth-child(2)::before {
+	background-color: var(--Red);
+}
+
+.card:nth-child(3)::before {
+	background-color: var(--Orange);
+}
+
+.card:nth-child(4)::before {
+	background-color: var(--Blue);
+}
+
+.card__img {
+	align-self: flex-end;
+}
+
+@media (min-width: 700px) {
+	.technology__cards {
+		grid-template-areas:
+			".     item2     ."
+			"item1 item2 item4"
+			"item1 item3 item4"
+			".     item3     .";
+	}
+
+	.card:nth-child(1) {
+		grid-area: item1;
+	}
+
+	.card:nth-child(2) {
+		grid-area: item2;
+	}
+
+	.card:nth-child(3) {
+		grid-area: item3;
+	}
+
+	.card:nth-child(4) {
+		grid-area: item4;
+	}
+}
